@@ -5,7 +5,7 @@
     "colab": {
       "name": "Untitled3.ipynb",
       "provenance": [],
-      "authorship_tag": "ABX9TyNLdOOtoZXGb/mEzvFzOvLN",
+      "authorship_tag": "ABX9TyNO7kDQa0bZ3C4bMvOksmfq",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -143,30 +143,32 @@
         "colab_type": "code",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 170
+          "height": 204
         },
-        "outputId": "71b36c1d-0fad-4e0b-c528-25f9633d8436"
+        "outputId": "b2265688-cf45-487a-e40c-45e696e251c3"
       },
       "source": [
-        "enteros=np.arange(1,10,1)\n",
-        "valida=(enteros%2==1) & (enteros%3==0)\n",
-        "for enteros in valida:\n",
-        "  print(enteros)\n"
+        "enteros=np.arange(11)\n",
+        "valida= (enteros%3==0) & (enteros%2==1)\n",
+        "for j in valida:\n",
+        "  print(enteros[j],\":\",valida[j])\n"
       ],
-      "execution_count": 17,
+      "execution_count": 45,
       "outputs": [
         {
           "output_type": "stream",
           "text": [
-            "False\n",
-            "False\n",
-            "True\n",
-            "False\n",
-            "False\n",
-            "False\n",
-            "False\n",
-            "False\n",
-            "True\n"
+            "[] : []\n",
+            "[] : []\n",
+            "[] : []\n",
+            "[[ 0  1  2  3  4  5  6  7  8  9 10]] : [[False False False  True False False False False False  True False]]\n",
+            "[] : []\n",
+            "[] : []\n",
+            "[] : []\n",
+            "[] : []\n",
+            "[] : []\n",
+            "[[ 0  1  2  3  4  5  6  7  8  9 10]] : [[False False False  True False False False False False  True False]]\n",
+            "[] : []\n"
           ],
           "name": "stdout"
         }
@@ -179,29 +181,38 @@
         "colab_type": "code",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 129
+          "height": 204
         },
-        "outputId": "a7277635-c827-4289-9fe8-77157f056ba9"
+        "outputId": "5ee83d10-a27a-4876-f0d8-7771c74219f0"
       },
       "source": [
-        "a = numpy.arange(11)\n",
+        "a = np.arange(11)\n",
         "\n",
         "fboo = (a % 3 == 0) & (a % 2 == 1) # atencion a los parentesis. Son necesarios\n",
         "                                   # porque la operacion '&' se realiza antes que\n",
         "                                   # '==' o '%'.\n",
         "\n",
         "for j in range(a.size):\n",
-        "    print a[j], '-->', fboo[j]"
+        "    print (a[j], '-->', fboo[j])"
       ],
-      "execution_count": 16,
+      "execution_count": 19,
       "outputs": [
         {
-          "output_type": "error",
-          "ename": "SyntaxError",
-          "evalue": "ignored",
-          "traceback": [
-            "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-16-e1d60b6454ff>\"\u001b[0;36m, line \u001b[0;32m8\u001b[0m\n\u001b[0;31m    print a[j], '-->', fboo[j]\u001b[0m\n\u001b[0m          ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m Missing parentheses in call to 'print'. Did you mean print(a[j], '-->', fboo[j])?\n"
-          ]
+          "output_type": "stream",
+          "text": [
+            "0 --> False\n",
+            "1 --> False\n",
+            "2 --> False\n",
+            "3 --> True\n",
+            "4 --> False\n",
+            "5 --> False\n",
+            "6 --> False\n",
+            "7 --> False\n",
+            "8 --> False\n",
+            "9 --> True\n",
+            "10 --> False\n"
+          ],
+          "name": "stdout"
         }
       ]
     }
